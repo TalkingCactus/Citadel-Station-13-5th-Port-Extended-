@@ -373,7 +373,7 @@
 "hi" = (/obj/structure/rack,/obj/item/clothing/suit/space/syndicate/black/red,/obj/item/clothing/head/helmet/space/syndicate/black/red,/turf/simulated/floor/plasteel/shuttle{icon_state = "shuttlefloor4"},/area/shuttle/syndicate)
 "hj" = (/obj/machinery/libraryscanner,/turf/simulated/floor/plasteel,/area/crew_quarters/sleep)
 "hk" = (/obj/machinery/light{dir = 1},/obj/machinery/bookbinder,/turf/simulated/floor/plasteel,/area/crew_quarters/sleep)
-"hl" = (/obj/structure/table/wood,/obj/machinery/computer/libraryconsole,/turf/simulated/floor/plasteel,/area/crew_quarters/sleep)
+"hl" = (/obj/structure/table/wood,/obj/machinery/computer/libraryconsole/bookmanagement,/turf/simulated/floor/plasteel,/area/crew_quarters/sleep)
 "hm" = (/obj/structure/table/wood,/obj/item/weapon/paper_bin,/obj/item/weapon/pen,/turf/simulated/floor/plasteel,/area/crew_quarters/sleep)
 "hn" = (/obj/item/device/radio/intercom{pixel_y = 25},/obj/structure/table/wood,/obj/item/weapon/storage/pill_bottle/dice,/obj/item/toy/cards/deck,/turf/simulated/floor/plasteel,/area/crew_quarters/sleep)
 "ho" = (/obj/machinery/vending/coffee,/turf/simulated/floor/plasteel,/area/crew_quarters/sleep)
