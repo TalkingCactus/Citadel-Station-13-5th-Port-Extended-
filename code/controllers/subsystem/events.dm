@@ -53,24 +53,19 @@ var/datum/subsystem/events/SSevent
 /datum/subsystem/events/proc/reschedule()
 	scheduled = world.time + rand(frequency_lower, max(frequency_lower,frequency_upper))
 
-	if(world.time > 108000) //Three.
-		frequency_lower=1000
-		frequency_upper=1500
-		//if ((!( ticker ) || emergency_shuttle.location))
-		//if(SSshuttle.emergency.mode == SHUTTLE_DOCKED || SSshuttle.emergency.mode == SHUTTLE_CALL)
-		//	return
-		if(SSshuttle.emergency.mode < SHUTTLE_CALL)
-			SSshuttle.emergency.request(null, 1.5)
-			log_game("Round time limit reached. Shuttle has been auto-called.")
-			message_admins("Round time limit reached. Shuttle called.")
-
 //selects a random event based on whether it can occur and it's 'weight'(probability)
 /datum/subsystem/events/proc/spawnEvent()
+	if(world.time > 216000 && SSshuttle.emergency.mode < SHUTTLE_CALL) //Six hours.
+		print_command_report(text = "Crew transfer in progress. All crew members should prepare to board the shuttle at the departures dock.", title = "Crew Transfer Notice")
+		spawn(50)
+			SSshuttle.emergency.request(null, 2)
+			log_game("Round time limit reached. Shuttle has been auto-called.")
+			message_admins("Round time limit reached. Shuttle called.")
+			return
 	if(!config.allow_random_events)
 //		var/datum/round_event_control/E = locate(/datum/round_event_control/dust) in control
 //		if(E)	E.runEvent()
 		return
-
 	var/sum_of_weights = 0
 	for(var/datum/round_event_control/E in control)
 		if(E.occurrences >= E.max_occurrences)	continue
