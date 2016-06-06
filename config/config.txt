@@ -231,4 +231,4 @@ ANNOUNCE_ADMIN_LOGOUT
 #AUTOADMIN Game Admin
 
 ## Job whitelist head ban
-JOBLIST
+#JOBLIST

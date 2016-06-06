@@ -13,7 +13,7 @@ var/datum/subsystem/events/SSevent
 
 	var/list/holidays			//List of all holidays occuring today or null if no holidays
 	var/wizardmode = 0
-
+	var/timelimit = 216000
 
 /datum/subsystem/events/New()
 	NEW_SS_GLOBAL(SSevent)
@@ -36,6 +36,7 @@ var/datum/subsystem/events/SSevent
 
 /datum/subsystem/events/fire()
 	checkEvent()
+	checkCrewTransfer()
 	for(var/thing in running)
 		if(thing)
 			thing:process()
@@ -55,16 +56,7 @@ var/datum/subsystem/events/SSevent
 
 //selects a random event based on whether it can occur and it's 'weight'(probability)
 /datum/subsystem/events/proc/spawnEvent()
-	if(world.time > 216000 && SSshuttle.emergency.mode < SHUTTLE_CALL) //Six hours.
-		print_command_report(text = "Crew transfer in progress. All crew members should prepare to board the shuttle at the departures dock.", title = "Crew Transfer Notice")
-		spawn(50)
-			SSshuttle.emergency.request(null, 2)
-			log_game("Round time limit reached. Shuttle has been auto-called.")
-			message_admins("Round time limit reached. Shuttle called.")
-			return
 	if(!config.allow_random_events)
-//		var/datum/round_event_control/E = locate(/datum/round_event_control/dust) in control
-//		if(E)	E.runEvent()
 		return
 	var/sum_of_weights = 0
 	for(var/datum/round_event_control/E in control)
@@ -211,3 +203,21 @@ var/datum/subsystem/events/SSevent
 /datum/subsystem/events/proc/resetFrequency()
 	frequency_lower = initial(frequency_lower)
 	frequency_upper = initial(frequency_upper)
+
+///Auto-call, crew transfer, etc thing
+/datum/subsystem/events/proc/checkCrewTransfer()
+	if(world.time > timelimit) // if the game's been going on long enough
+		initiateCrewTransfer() // then call the shuttle automatically
+		return 1
+	else
+		return 0
+
+/datum/subsystem/events/proc/initiateCrewTransfer()
+	if(SSshuttle.emergency.mode < SHUTTLE_CALL)
+		SSshuttle.emergency.request(null, 2, null, "Crew transfer in progress. All crew members should prepare to board the shuttle at the departures dock.")
+		log_game("Round time limit reached. Shuttle has been auto-called.")
+		message_admins("Round time limit reached. Shuttle called.")
+		return 1
+	else
+		return 0
+
