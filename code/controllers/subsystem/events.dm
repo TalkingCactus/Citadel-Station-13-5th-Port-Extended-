@@ -214,10 +214,9 @@ var/datum/subsystem/events/SSevent
 
 /datum/subsystem/events/proc/initiateCrewTransfer()
 	if(SSshuttle.emergency.mode < SHUTTLE_CALL)
-		SSshuttle.emergency.request(null, 2, null, "Crew transfer in progress. All crew members should prepare to board the shuttle at the departures dock.")
+		SSshuttle.emergency.request(null, 2)
 		log_game("Round time limit reached. Shuttle has been auto-called.")
 		message_admins("Round time limit reached. Shuttle called.")
 		return 1
 	else
 		return 0
-
