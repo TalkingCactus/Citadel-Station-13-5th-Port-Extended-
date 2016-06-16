@@ -50,10 +50,10 @@
 
 /datum/job/warden/config_check()
 	return 0
-
+/*
 /datum/job/cyborg/config_check()
 	return 0
-
+*/
 //DISABLED EVENTS
 
 /datum/round_event_control/meteor_wave
