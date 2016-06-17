@@ -511,8 +511,8 @@ var/global/list/rockTurfEdgeCache
 	var/dug = 0       //0 = has not yet been dug, 1 = has already been dug
 
 /turf/simulated/floor/plating/asteroid/airless
-	oxygen = 0.01
-	nitrogen = 0.01
+	oxygen = 0.0
+	nitrogen = 0.0
 	temperature = TCMB
 
 /turf/simulated/floor/plating/asteroid/New()
