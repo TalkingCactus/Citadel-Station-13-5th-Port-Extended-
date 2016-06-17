@@ -198,20 +198,27 @@
 			switch(icontype)
 				if("Female")
 					icon_state = "p_female"
-				//	animation_length=45
 				if("Male")
 					icon_state = "p_male"
-				//	animation_length=45
 				if("Herm")
 					icon_state = "p_herm"
-				//	animation_length=45
 				if("Xenomorph")
-					icon_state = "p_xeno"
-				//	animation_length=45
+					var/sub_icontype = input("Select a color!", "Robot", null, null) in list("White", "Pink", "Red", "Brown", "Orange")
+					switch(sub_icontype)
+						if("White")
+							icon_state = "xeno"
+						if("Pink")
+							icon_state = "xeno_pink"
+						if("Red")
+							icon_state = "xeno_red"
+						if("Brown")
+							icon_state = "xeno_brown"
+						if("Orange")
+							icon_state = "xeno_orange"
+//					src.module.modules += new /obj/item/weapon/(src) //perhaps specific equipment at some point, this could be used for all borg types
 				else
 					icon_state = "p_female"
-				//	animation_length=45
-			modtype = "p_"
+			modtype = "Pleasurer"
 			feedback_inc("cyborg_pleasure",1)
 
 		if("Miner")
@@ -866,8 +873,16 @@
 				overlays += "eyes-p_female"
 			if("p_herm")
 				overlays += "eyes-p_herm"
-			if("p_xeno")
-				overlays += "eyes-p_xeno"
+			if("xeno")
+				overlays += "eyes-xeno"
+			if("xeno_pink")
+				overlays += "eyes-xeno"
+			if("xeno_red")
+				overlays += "eyes-xeno"
+			if("xeno_orange")
+				overlays += "eyes-xeno"
+			if("xeno_brown")
+				overlays += "eyes-xeno"
 			if("loaderborg")
 				overlays += "eyes-loaderborg"
 			if("k9")
