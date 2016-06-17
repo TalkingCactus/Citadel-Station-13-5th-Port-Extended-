@@ -3,9 +3,9 @@
 "c" = (/turf/indestructible/bedrock,/area/dungeon)
 "d" = (/turf/simulated/mineral/random,/area/dungeon)
 "e" = (/turf/indestructible/dungeon/iron,/area/dungeon)
-"f" = (/obj/structure/mineral_door/iron,/turf/simulated/floor/plasteel/rockvault,/area/dungeon)
-"g" = (/turf/simulated/floor/plasteel/rockvault,/area/dungeon)
-"h" = (/obj/structure/ladder{anchored = 1; height = 0; id = "vault_dungeon"},/turf/simulated/floor/plasteel/rockvault,/area/dungeon)
+"f" = (/obj/structure/mineral_door/iron,/turf/simulated/floor/plasteel/rockvault{nitrogen = 0; oxygen = 0; temperature = 0},/area/dungeon)
+"g" = (/turf/simulated/floor/plasteel/rockvault{nitrogen = 0; oxygen = 0; temperature = 0},/area/dungeon)
+"h" = (/obj/structure/ladder{anchored = 1; height = 0; id = "vault_dungeon"},/turf/simulated/floor/plasteel/rockvault{nitrogen = 0; oxygen = 0; temperature = 0},/area/dungeon)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
