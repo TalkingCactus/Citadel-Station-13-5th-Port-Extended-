@@ -22,15 +22,15 @@
 
 /datum/job/hop/get_access()
 	return get_all_accesses()
-
+/*       //Missing too much stuff, just gonna use the default access ~ Cactus//
 // Cargo
 
 /datum/job/cargo_tech/New()
 	..()
 	total_positions = 3
 	spawn_positions = 3
-	access = list(access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_qm, access_mint, access_mining, access_mining_station)
-	minimal_access = list(access_maint_tunnels, access_cargo, access_cargo_bot, access_mining, access_mint, access_mining_station, access_mailsorting)
+	access = list(access_maint_tunnels, access_cargo, access_cargo_bot, access_mailsorting, access_mineral_storeroom)
+	minimal_access = list(access_maint_tunnels, access_cargo, access_cargo_bot, access_mailsorting, access_mineral_storeroom)
 
 // Engineering
 
@@ -81,3 +81,4 @@
 	spawn_positions = 4
 	access = list(access_security, access_sec_doors, access_brig, access_court)
 	minimal_access = list(access_security, access_sec_doors, access_brig, access_court)
+*/
