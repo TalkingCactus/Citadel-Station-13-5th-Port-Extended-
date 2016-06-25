@@ -33,3 +33,4 @@
 	var/master = null
 
 	var/list/container = list(  )
+

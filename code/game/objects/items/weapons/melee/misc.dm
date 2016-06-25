@@ -21,7 +21,7 @@
 		user.visible_message("<span class='suicide'>[user] is strangling \himself with the [src.name]! It looks like \he's trying to commit suicide.</span>")
 		return (OXYLOSS)
 
-/obj/item/weapon/melee/leatherwhip
+/obj/item/weapon/melee/whip
 	name = "rawhide whip"
 	desc = "Be glad this isn't the 1700's."
 	icon_state = "chain"

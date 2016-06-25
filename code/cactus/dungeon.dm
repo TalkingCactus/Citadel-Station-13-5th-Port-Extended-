@@ -45,3 +45,24 @@
 	desc = "This looks too tough to dig through."
 	icon = 'icons/turf/mining.dmi'
 	icon_state = "rock"
+
+///////////
+//TUNNELS//
+//////////
+
+//These may allow travel between sectioned areas in the future.
+
+/obj/effect/tunnel
+	icon_state = "tunnel"
+	icon = 'code/cactus/obj/obj.dmi'
+	desc = "A tunnel. Claw marks can be seen on the walls and around the entrance."
+
+/obj/effect/tunnel/attack_hand(mob/user)
+	user << "You don't fit!"
+	return
+
+/obj/effect/tunnel/attack_paw(mob/user)
+	return attack_hand()
+
+/obj/effect/tunnel/attack_alien(mob/user)
+	return attack_hand()

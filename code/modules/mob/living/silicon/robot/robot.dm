@@ -203,10 +203,14 @@
 				if("Herm")
 					icon_state = "p_herm"
 				if("Xenomorph")
-					var/sub_icontype = input("Select a color!", "Robot", null, null) in list("White", "Pink", "Red", "Brown", "Orange")
+					var/sub_icontype = input("Select a color!", "Robot", null, null) in list("White","Grey","Purple", "Pink", "Red", "Brown", "Orange")
 					switch(sub_icontype)
 						if("White")
 							icon_state = "xeno"
+						if("Purple")
+							icon_state = "xeno_purple"
+						if("Grey")
+							icon_state = "xeno_grey"
 						if("Pink")
 							icon_state = "xeno_pink"
 						if("Red")
@@ -874,6 +878,10 @@
 			if("p_herm")
 				overlays += "eyes-p_herm"
 			if("xeno")
+				overlays += "eyes-xeno"
+			if("xeno_grey")
+				overlays += "eyes-xeno"
+			if("xeno_purple")
 				overlays += "eyes-xeno"
 			if("xeno_pink")
 				overlays += "eyes-xeno"
